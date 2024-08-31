@@ -13,9 +13,8 @@ const Nav = () => {
             <div className="text-white lg:flex justify-center space-x-5 hidden">
               {/* item sect */}
               {navbarItems.map((item: NavbarItem) => (
-                <div className="w-auto group">
+                <div key={item.title} className="w-auto group">
                   <a
-                    key={item.title}
                     href={item.href}
                     className="hover:text-green-500 rounded-lg p-2"
                   >
