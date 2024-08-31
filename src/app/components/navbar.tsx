@@ -1,6 +1,34 @@
-import { navbarItems, NavbarItem } from "../data/navbarItem";
+'use client'
 
-const Nav = () => {
+import { navbarItems, NavbarItem } from "../data/navbarItem";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+
+const Nav: React.FC = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const bounceVariants = {
+    open: {
+      opacity: 1,
+      y: '0%',
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2
+      }
+    },
+    closed: {
+      opacity: 0,
+      y: '-100%',
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+      }
+    },
+  };
+
   return (
     <>
       <nav className="bg-gray-800 sticky z-10 top-0">
@@ -9,6 +37,7 @@ const Nav = () => {
             <h1 className="text-white font-bold justify-start">
               KIZZUATO <a className="text-green-500 font-bold">.</a>
             </h1>
+
             {/* desktop mode */}
             <div className="text-white lg:flex justify-center space-x-5 hidden">
               {/* item sect */}
@@ -28,7 +57,10 @@ const Nav = () => {
 
             {/* Burger menu untuk mobile */}
             <div className="lg:hidden flex items-center">
-              <button className="text-green-500 focus:outline-none">
+              <button
+                className="text-green-500 focus:outline-none"
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              >
                 {/* Icon burger */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -46,11 +78,34 @@ const Nav = () => {
                 </svg>
               </button>
             </div>
-
           </div>
         </div>
       </nav>
+
+      {/* sidebar */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div
+            className="fixed top-0 left-0 w-full h-full bg-gray-700 text-white lg:hidden"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={bounceVariants}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Sidebar items */}
+            <div className="flex flex-col space-y-4 p-6">
+              {navbarItems.map((item: NavbarItem) => (
+                <a key={item.title} href={item.href}>
+                  {item.title}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
+
 export default Nav;
