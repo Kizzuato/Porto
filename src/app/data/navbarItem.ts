@@ -5,10 +5,10 @@ export interface NavbarItem {
 
 export const navbarItems: NavbarItem[] = [
     { title: 'Home', href: '#' },
-    { title: 'Works', href: '#works' },
-    { title: 'About', href: '#' },
-    { title: 'Projects', href: '#' },
-    { title: 'Services', href: '#' },
-    { title: 'Contact', href: '#' },
+    { title: 'About', href: '#about' },
+    { title: 'Works & Certifications', href: '#works' },
+    // { title: 'Certifications', href: '#certifications' },
+    { title: 'Services', href: '#services' },
+    { title: 'Contact', href: '#contact' },
   ];
   

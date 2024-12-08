@@ -6,9 +6,29 @@ const Works: React.FC = () => {
   return (
     <>
       <div
-        className="bg-gray-300 flex lg:flex-row flex-col px-6 pt-20 h-96"
+        className="bg-gray-300 grid px-6 py-6 h-full gap-6"
         id="particles-js"
-      >
+        >
+        <h1 className="text-black text-4xl font-bold uppercase">WORKS</h1>
+        <div
+          className=" lg:grid-row grid-col grid lg:grid-cols-4 grid-cols-1"
+          id="particles-js"
+        >
+          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+        </div>
+        <h1 className="text-black text-4xl font-bold uppercase">Certifications</h1>
+        <div
+          className=" lg:grid-row grid-col grid lg:grid-cols-4 grid-cols-1"
+          id="particles-js"
+        >
+        <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+        <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+        <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+        <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
+        </div>
       </div>
     </>
   );

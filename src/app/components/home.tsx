@@ -14,7 +14,7 @@ const Home: React.FC<Home> = ({ videoId }) => {
   return (
     <>
       <div
-        className="bg-gray-900 flex lg:flex-row flex-col px-6 pt-20 justify-center h-full"
+        className="flex lg:flex-row flex-col justify-center h-100% align-middle"
         id="particles-js"
       >
         <div className="text-5xl lg:w-1/2 w-full mb-10 bg-black flex flex-col text-center justify-center">
