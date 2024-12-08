@@ -29,8 +29,8 @@ const About: React.FC = () => {
             <a className="">Dzakiyya Puteri Aulia</a>
           </h2>
           <h2 className="text-xl text-justify pr-10">
-            I'm an Informatics student, passionate about building modern and
-            efficient web applications. Currently, I'm focused on mastering
+            I am an Informatics student, passionate about building modern and
+            efficient web applications. Currently, I am focused on mastering
             React, Next.js, and Tailwind CSS to create user-friendly web
             experiences. Beyond coding, I am enthusiast about technology,
             Graphic Design , and creating illustration. My goal is to become a
