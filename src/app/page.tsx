@@ -3,6 +3,9 @@ import Nav from "./components/navbar";
 import Home from "./components/home";
 import Works from "./components/works";
 import About from "./components/about";
+import Services from "./components/services";
+import Contact from "./components/contact";
+import Footer from "./components/footer";
 import ParticlesBackground from "./components/particles";
 
 export default function Main() {
@@ -13,21 +16,21 @@ export default function Main() {
       <section id="#" className="row-span-1">
         <Home videoId="OCWj5xgu5Ng?si=k9wllEsAXltbkIgL"></Home>
       </section>
-      <section id="about" className="row-span-2 bg-yellow-50">
+      <section id="about" className="row-span-2">
         <About></About>
       </section>
       <section id="works" className="row-span-2">
         <Works></Works>
       </section>
-      {/* <section id="about">
-        <About></About>
+      <section id="services" className="row-span-2">
+        <Services></Services>
       </section>
-      <section id="about">
-        <About></About>
+      <section id="contact" className="row-span-2">
+        <Contact></Contact>
       </section>
-      <section id="about">
-        <About></About>
-      </section> */}
+      <section>
+        <Footer></Footer>
+      </section>
     </main>
   );
 }
