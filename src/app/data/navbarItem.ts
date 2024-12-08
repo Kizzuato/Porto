@@ -9,6 +9,6 @@ export const navbarItems: NavbarItem[] = [
     { title: 'Works & Certifications', href: '#works' },
     // { title: 'Certifications', href: '#certifications' },
     { title: 'Services', href: '#services' },
-    { title: 'Contact', href: '#contact' },
+    { title: 'Contact Me', href: '#contact' },
   ];
   

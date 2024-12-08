@@ -18,9 +18,9 @@ const Works: React.FC = () => {
           <div className="bg-black h-72 w-72 rounded-xl"></div>
           <div className="bg-black h-72 w-72 rounded-xl"></div>
         </div>
-        <div className="text-black grid grid-cols-7 items-center">
-          <hr className="border-black col-span-5" />
-          <h1 className="text-black text-4xl font-bold uppercase justify-end text-right pr-5 col-span-2">
+        <div className="text-black grid lg:grid-cols-7 grid-cols-7 items-center justify-between">
+          <hr className="border-black lg:col-span-5 col-span-1" />
+          <h1 className="text-black text-4xl font-bold uppercase justify-end text-right pr-5 col-span-1 lg:col-span-2">
             Certifications
           </h1>
         </div>
