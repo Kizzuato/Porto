@@ -12,28 +12,28 @@ export default function Main() {
   return (
     <main className="min-h-screen h-full bg-gray-900">
       <section className="sticky z-10 top-0">
-      <Nav></Nav>
+        <Nav></Nav>
       </section>
       {/* <ParticlesBackground /> */}
-      <div className="grid grid-rows-8">
-      <section id="#" className="row-span-1">
-        <Home></Home>
-      </section>
-      <section id="about" className="row-span-1">
-        <About></About>
-      </section>
-      <section id="works" className="row-span-2">
-        <Works></Works>
-      </section>
-      <section id="services" className="row-span-2">
-        <Services></Services>
-      </section>
-      <section id="contact" className="row-span-2">
-        <Contact></Contact>
-      </section>
-      <section>
-        <Footer></Footer>
-      </section>
+      <div className="grid grid-rows-6">
+        <section id="#" className="row-span-1">
+          <Home></Home>
+        </section>
+        <section id="about" className="row-span-1">
+          <About></About>
+        </section>
+        <section id="works" className="row-span-2">
+          <Works></Works>
+        </section>
+        <section id="services" className="row-span-1">
+          <Services></Services>
+        </section>
+        <section id="contact" className="row-span-1">
+          <Contact></Contact>
+        </section>
+        <section>
+          <Footer></Footer>
+        </section>
       </div>
     </main>
   );

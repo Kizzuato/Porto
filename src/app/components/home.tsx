@@ -14,9 +14,9 @@ const Home: React.FC = ({  }) => {
   return (
     <>
       <div
-        className="flex lg:flex-row flex-col justify-center h-full bg-green-300"
+        className="flex lg:flex-row flex-col justify-center h-full items-center"
       >
-        <div className="text-5xl lg:w-1/2 w-full bg-black flex flex-col text-center justify-center h-full">
+        <div className="text-5xl lg:w-1/2 w-full bg-black flex flex-col text-center justify-center h-1/4">
           <h1 className="text-green-500 font-bold animate-fade-right animate-delay-200 lg:text-5xl text-4xl ">
             PORTOFOLIO 
           </h1>
