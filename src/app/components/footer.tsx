@@ -33,11 +33,14 @@ const Footer: React.FC = () => {
     <>
       <nav className=" bg-gray-800 sticky z-10 top-0 h-16">
         <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8 xl:px-10 sticky top-0">
-          <div className="flex h-16 items-center justify-between sticky top-0 align-middle">
-            <h1 className="text-white font-bold left-0 inset-y-0">
-          Copyright © 2023 
-              DZAKIYYA PUTERI AULIA <a className="text-green-500 font-bold">.</a> ALL RIGHT RESERVED
-            </h1>
+          <div className="flex h-16 items-center justify-center sticky top-0 align-middle">
+            {/* <h1 className="text-white font-bold left-0 inset-y-0">
+              KIZZUATO <a className="text-green-500 font-bold">.</a>
+            </h1> */}
+
+            <p className="text-sm">
+            Copyright © 2024 Dzakiyya Puteri Aulia. All rights reserved
+            </p>
 
             {/* desktop mode */}
             {/* <div className="text-white lg:flex justify-center space-x-5 hidden"> */}
