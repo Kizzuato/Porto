@@ -15,7 +15,7 @@ export default function Main() {
         <Nav></Nav>
       </section>
       {/* <ParticlesBackground /> */}
-      <div className="grid grid-rows-6">
+      <div className="grid lg:grid-rows-6">
         <section id="#" className="row-span-1">
           <Home></Home>
         </section>

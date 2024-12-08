@@ -12,7 +12,7 @@ const Works: React.FC = () => {
           </h1>
           <hr className="border-black col-span-6" />
         </div>
-        <div className=" grid grid-cols-4 justify-between">
+        <div className=" lg:grid-row grid lg:grid-cols-4 justify-between">
           <div className="bg-black h-72 w-72 rounded-xl"></div>
           <div className="bg-black h-72 w-72 rounded-xl"></div>
           <div className="bg-black h-72 w-72 rounded-xl"></div>
