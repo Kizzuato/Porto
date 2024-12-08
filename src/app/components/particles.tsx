@@ -6,7 +6,6 @@ import Particles from "react-tsparticles";
 const ParticlesBackground: React.FC = () => {
   return (
     <>
-    wazzup
     <Particles
       id="tsparticles"
       options={{

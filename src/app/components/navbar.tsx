@@ -31,7 +31,7 @@ const Nav: React.FC = () => {
 
   return (
     <>
-      <nav className="bg-gray-800 sticky z-10 top-0">
+      <nav className=" bg-gray-800 sticky z-10 top-0">
         <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8 xl:px-10 sticky top-0">
           <div className="flex h-16 items-center justify-between sticky top-0 align-middle">
             <h1 className="text-white font-bold left-0 inset-y-0">
@@ -42,14 +42,14 @@ const Nav: React.FC = () => {
             <div className="text-white lg:flex justify-center space-x-5 hidden">
               {/* item sect */}
               {navbarItems.map((item: NavbarItem) => (
-                <div key={item.title} className="w-auto group">
+                <div key={item.title} className="w-auto group/navbarIa">
                   <a
                     href={item.href}
                     className="hover:text-green-500 rounded-lg p-2"
                   >
                     {item.title}
                   </a>
-                  <div className="w-full h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                  <div className="w-full h-0.5 bg-green-500 scale-x-0 group-hover/navbarIa:scale-x-100 transition-transform"></div>
                 </div>
               ))}
             </div>
