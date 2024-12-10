@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
             {contactItems.map((item: ContactItem) => (
               <a
                 key={item.name}
-                href="https://www.geeksforgeeks.org/how-to-make-the-background-of-a-div-clickable-in-html/?ref=ml_lbp"
+                href={item.link} target="_blank"
               >
                 <div className="flex flex-row content-center items-center gap-5 border-green-500 rounded-lg p-2 relative font-medium group py-1.5 px-2.5">
                   <span className="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-green-500 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
