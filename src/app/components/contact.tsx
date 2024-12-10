@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import me from "../../../public/me.jpg";
 import { Input } from "postcss";
 
 const Contact: React.FC = () => {
+
+
   return (
     <>
       <div className="px-6 py-10 h-full w-full bg-black lg:flex-row flex-col flex lg:justify-between gap-10">
@@ -25,7 +27,7 @@ const Contact: React.FC = () => {
             you as soon as possible!
           </div>
           <div className="mt-5">
-            <form className="flex flex-col gap-2">
+            <form className="flex flex-col gap-2" id="emailForm">
               <div className="flex flex-row gap-5 justify-between">
                 <label className="flex flex-col">
                   First Name
@@ -63,11 +65,13 @@ const Contact: React.FC = () => {
                   name="Name"
                 ></textarea>
               </label>
-              <div className="grid grid-cols grid-cols-2 gap-10 mt-10">
-                <button className="outline outline-1 text-green-500 bg-black">
-                  Cancel
+              <div className="grid grid-cols grid-cols-2 gap-16 mt-10">
+                <button
+                  className="outline outline-1 text-green-500 bg-black rounded-sm p-1" type="reset"
+                >
+                  Reset
                 </button>
-                <button className="outline outline-1 text-green-500 bg-black">
+                <button className="outline outline-1 text-black bg-green-500 rounded-sm p-1" type="submit">
                   Submit
                 </button>
               </div>
