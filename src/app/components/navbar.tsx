@@ -86,7 +86,7 @@ const Nav: React.FC = () => {
       <AnimatePresence>
         {isSidebarOpen && (
           <motion.div
-            className="fixed top-0 left-0 w-full h-full bg-gray-700 text-white lg:hidden"
+            className="absolute top-15 left-0 w-full bg-gray-700 text-white lg:hidden"
             initial="closed"
             animate="open"
             exit="closed"
