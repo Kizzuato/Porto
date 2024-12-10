@@ -31,7 +31,7 @@ const About: React.FC = () => {
             React, Next.js, and Tailwind CSS to create user-friendly web
             experiences. Beyond coding, I am enthusiast about technology,
             Graphic Design , and creating illustration. My goal is to become a
-            skilled Full-Stack Developer and contribute to impactful projects.
+            skilled Front-end Developer and contribute to impactful projects.
           </h2>
         </div>
       </div>

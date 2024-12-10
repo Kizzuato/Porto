@@ -11,4 +11,3 @@ export const navbarItems: NavbarItem[] = [
     { title: 'Services', href: '#services' },
     { title: 'Contact Me', href: '#contact' },
   ];
-  
