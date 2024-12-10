@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
           </div>
           <div className="mt-5">
             <form className="flex flex-col gap-2">
-              <div className="flex lg:flex-row flex-col gap-5 justify-between">
+              <div className="flex lg:flex-row flex-col lg:gap-5 gap-2 justify-between">
                 <label className="flex flex-col">
                   First Name
                   <input className="p-1 rounded-sm text-black mt-1" type="text" id="" name="Name"></input>
