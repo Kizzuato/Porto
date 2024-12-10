@@ -5,7 +5,7 @@ import me from "../../../public/me.jpg";
 const About: React.FC = () => {
   return (
     <>
-      <div className="px-6 py-10 h-full w-full bg-black flex lg:flex-row flex-col justify-between gap-10">
+      <div className="px-6 py-10 h-full w-full bg-black flex lg:flex-row flex-col justify-between gap-10 lg:items-center">
         <div className="bg-gray-900  lg:w-1/2 h-96 ">
           <Image
             src="/me.jpg"
@@ -16,7 +16,7 @@ const About: React.FC = () => {
           />
         </div>
         <div className="bg-gray-900  lg:w-1 h-1 lg:h-full"></div>
-        <div className=" lg:w-1/2 h-full selection:bg-green-500 selection:text-black">
+        <div className=" lg:w-1/2 h-full selection:bg-green-500 selection:text-black lg:h-[348px]">
           <h1 className="text-3xl font-bold text-white-500">
             ABOUT <a className="text-green-500">ME</a>
           </h1>
