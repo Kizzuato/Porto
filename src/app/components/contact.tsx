@@ -34,7 +34,6 @@ const Contact: React.FC = () => {
                     <path d={item.de} />
                   </svg>
                   <h3 className="text-xl relative">{item.name}</h3>
-                  {/* <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-full"></span> */}
                 </div>
               </a>
             ))}
