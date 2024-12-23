@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import me from "../../../public/me.jpg";
+import me from "../../../public/placeholder.png";
 import and from "../../../public/image.png";
 
 const Works: React.FC = () => {
-  const items = [me, me, me, me, and, me, me, me, me, me, and, me]; // Ganti dengan data/gambar Anda
+  const items = [me, me, me, me, me]; // Ganti dengan data/gambar Anda
   const itemsPerSlideDesktop = 4;
   const itemsPerSlideMobile = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -72,7 +72,7 @@ const Works: React.FC = () => {
           </h1>
           <hr className="border-white col-span-6 lg:mt-0 mt-3" />
         </div>
-        <p className="py-6">
+        <p className="py-6 text-gray-300">
           Here are some of the projects I have worked on, showcasing my skills
           and creativity in building functional and user-friendly applications.
           Each project reflects my passion for problem-solving and delivering
@@ -84,19 +84,15 @@ const Works: React.FC = () => {
             className="relative w-full h-full"
             data-carousel="slide"
           >
-            <div className="grid md:grid-cols-4 gap-4 px-20">
+            <div className="flex md:flex-rows-4 gap-4 px-20 justify-center">
               {currentItems.map((item, index) => (
                 <div
                   key={index}
-                  className="relative w-full h-full bg-gray-200 rounded-lg overflow-hidden"
+                  className="relative bg-gray-200 rounded-lg overflow-hidden "
                 >
-                  <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div className="max-w-sm max-h-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#AYONIMA">
-                      <Image
-                        className="rounded-t-lg"
-                        src={me}
-                        alt=""
-                      />
+                      <Image className="rounded-t-lg" src={me} alt="" />
                     </a>
                     <div className="p-5">
                       <a href="#AYONIMA">
@@ -113,31 +109,9 @@ const Works: React.FC = () => {
                         className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                       >
                         Read more
-                        <svg
-                          className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 14 10"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M1 5h12m0 0L9 1m4 4L9 9"
-                          />
-                        </svg>
                       </a>
                     </div>
                   </div>
-
-                  {/* <Image
-                    src={item}
-                    alt={`Item ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                  /> */}
                 </div>
               ))}
             </div>
@@ -212,7 +186,7 @@ const Works: React.FC = () => {
             Certifications
           </h1>
         </div>
-        <p className="py-6">
+        <p className="py-6 text-gray-300">
           These certifications validate my expertise and commitment to
           continuous learning in the field of technology. They showcase my
           dedication to staying up-to-date with the latest trends and tools in
