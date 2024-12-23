@@ -39,7 +39,7 @@ const Nav: React.FC = () => {
             </h1>
 
             {/* desktop mode */}
-            <div className="text-white lg:flex justify-center space-x-5 hidden">
+            <div className="lg:flex justify-center space-x-5 hidden">
               {/* item sect */}
               {navbarItems.map((item: NavbarItem) => (
                 <div key={item.title} className="w-auto group/navbarIa">
@@ -86,7 +86,7 @@ const Nav: React.FC = () => {
       <AnimatePresence>
         {isSidebarOpen && (
           <motion.div
-            className="absolute top-15 left-0 w-full bg-gray-700 text-white lg:hidden"
+            className="absolute top-15 left-0 w-full bg-gray-700 lg:hidden"
             initial="closed"
             animate="open"
             exit="closed"

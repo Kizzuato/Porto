@@ -10,7 +10,7 @@ import ParticlesBackground from "./components/particles";
 
 export default function Main() {
   return (
-    <main className="min-h-screen h-full bg-gray-900">
+    <main className="min-h-screen h-full bg-gray-900 selection:bg-green-500 selection:text-black">
       <section className="sticky z-10 top-0">
         <Nav></Nav>
       </section>

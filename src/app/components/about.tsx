@@ -16,7 +16,7 @@ const About: React.FC = () => {
           />
         </div>
         <div className="bg-gray-900  lg:w-1 h-1 lg:h-full"></div>
-        <div className=" lg:w-1/2 h-full selection:bg-green-500 selection:text-black lg:h-[348px]">
+        <div className=" lg:w-1/2 h-full lg:h-[348px]">
           <h1 className="text-3xl font-bold text-white-500">
             ABOUT <a className="text-green-500">ME</a>
           </h1>
