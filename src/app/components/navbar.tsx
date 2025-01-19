@@ -14,7 +14,7 @@ const Nav: React.FC = () => {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 20,
+        stiffness: 80,
         restDelta: 2
       }
     },
@@ -24,7 +24,7 @@ const Nav: React.FC = () => {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 20,
+        stiffness: 90,
       }
     },
   };
@@ -96,7 +96,7 @@ const Nav: React.FC = () => {
             {/* Sidebar items */}
             <div className="flex flex-col space-y-4 p-6">
               {navbarItems.map((item: NavbarItem) => (
-                <a key={item.title} href={item.href}>
+                <a key={item.title} href={item.href} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                   {item.title}
                 </a>
               ))}
