@@ -1,6 +1,9 @@
+'use client'
+
 import React, { useState } from "react";
 import Image from "next/image";
 import me from "../../../public/me.jpg";
+import dynamic from "next/dynamic";
 
 const About: React.FC = () => {
   return (
@@ -8,10 +11,12 @@ const About: React.FC = () => {
       <div className="px-6 py-10 h-full w-full bg-black flex lg:flex-row flex-col justify-between gap-10 lg:items-center">
         <div className="bg-gray-900  lg:w-1/2 h-96 ">
           <Image
-            src="/me.jpg"
+            src={me}
             width={500}
             height={500}
             alt="gwe"
+            priority={false} 
+            placeholder="blur"
             className="object-none h-full w-full grayscale"
           />
         </div>
