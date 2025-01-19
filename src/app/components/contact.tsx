@@ -10,8 +10,8 @@ const Contact: React.FC = () => {
     <>
       <div className="px-6 py-10 h-full lg:w-full w-full bg-black lg:flex-row flex-col flex lg:justify-between gap-10">
         <div className="lg:w-1/2">
-          <h1 className="text-3xl font-bold pb-2">
-            CONTACT <a className="text-green-500">ME </a>
+          <h1 className="text-3xl font-bold pb-2 flex gap-2">
+            CONTACT <p className="text-green-500">ME </p>
           </h1>
           <div className="text-justify mb-8">
             Do you have a project idea or just want to say hello? Feel free to

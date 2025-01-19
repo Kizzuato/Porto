@@ -34,7 +34,7 @@ const Nav: React.FC = () => {
       <nav className=" bg-gray-800 sticky z-10 top-0 h-16">
         <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8 xl:px-10 sticky top-0">
           <div className="flex h-16 items-center justify-between sticky top-0 align-middle">
-            <h1 className="text-white font-bold left-0 inset-y-0">
+            <h1 className="text-white font-bold left-0 inset-y-0 flex">
               KIZZUATO <a className="text-green-500 font-bold">.</a>
             </h1>
 
