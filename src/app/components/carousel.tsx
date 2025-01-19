@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import me from "../../../public/placeholder.png";
 
+// pict
+// link
+// judul
+// penjelasan
+
 const Carousel: React.FC = () => {
   const items = [me, me, me, me, me]; // Ganti dengan data/gambar Anda
   const itemsPerSlideDesktop = 4;

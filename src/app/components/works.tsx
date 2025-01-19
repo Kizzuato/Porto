@@ -22,6 +22,7 @@ const Works: React.FC = () => {
           Each project reflects my passion for problem-solving and delivering
           high-quality solutions.
         </p>
+        {/* <Carousel /> */}
 
         <div className="grid lg:grid-cols-7 items-center justify-between pt-16">
           <hr className="border-white lg:col-span-5 lg:mt-0 mt-3 lg:order-first order-last w-full" />

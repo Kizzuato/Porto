@@ -26,11 +26,10 @@ const About: React.FC = () => {
             ABOUT <p className="text-green-500">ME</p>
           </h1>
           <br />
-          <h2 className="text-xl pb-2 flex items-baseline">
-            <p className="text-3xl">Hi</p>, my name is
-            <p className=""> Dzakiyya Puteri Aulia</p>
+          <h2 className="lg:text-xl pb-2 flex items-baseline gap-2">
+            <p className="text-3xl">Hi</p>, my name is Dzakiyya Puteri Aulia
           </h2>
-          <h2 className="text-xl text-justify pr-5 text-gray-300">
+          <h2 className="lg:text-xl text-justify pr-5 text-gray-300">
             I am an Informatics student, passionate about building modern and
             efficient web applications. Currently, I am focused on mastering
             React, Next.js, and Tailwind CSS to create user-friendly web
