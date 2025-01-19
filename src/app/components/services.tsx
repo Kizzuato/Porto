@@ -18,12 +18,12 @@ const Services: React.FC = () => {
           optimizing your web applications, I am here to deliver solutions
           tailored to your needs.
         </p>
-        <div className="grid-row grid-col grid grid-cols-4">
+        {/* <div className="grid-row grid-col grid grid-cols-4">
           <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
           <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
           <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
           <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
-        </div>
+        </div> */}
       </div>
     </>
   );
