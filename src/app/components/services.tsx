@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import me from "../../../public/me.jpg";
+import Carousel from "./carousel";
+import { ServicesItems } from "../data/servicesItems";
 
 const Services: React.FC = () => {
   return (
@@ -18,12 +20,7 @@ const Services: React.FC = () => {
           optimizing your web applications, I am here to deliver solutions
           tailored to your needs.
         </p>
-        {/* <div className="grid-row grid-col grid grid-cols-4">
-          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
-          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
-          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
-          <div className="text-5xl bg-black h-72 w-72 rounded-xl"></div>
-        </div> */}
+        <Carousel items={ServicesItems} />
       </div>
     </>
   );

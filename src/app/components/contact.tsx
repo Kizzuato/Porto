@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ContactItem, contactItems } from "../data/contactItem";
+import { ContactItem, contactItems } from "../data/contactItems";
 import Image from "next/image";
 import git from "../../../public/git.svg";
 

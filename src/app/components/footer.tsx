@@ -1,6 +1,6 @@
 "use client";
 
-import { navbarItems, NavbarItem } from "../data/navbarItem";
+import { navbarItems, NavbarItem } from "../data/navbarItems";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

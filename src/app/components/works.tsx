@@ -1,12 +1,11 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import me from "../../../public/placeholder.png";
-import and from "../../../public/image.png";
+import { WorksItems } from "../data/worksItem2";
+import { CertificationsItems } from "../data/certificationItems";
 import Carousel from "./carousel";
 
 const Works: React.FC = () => {
+
   return (
     <>
       <div className="grid px-6 pt-6 h-full">
@@ -22,7 +21,7 @@ const Works: React.FC = () => {
           Each project reflects my passion for problem-solving and delivering
           high-quality solutions.
         </p>
-        {/* <Carousel /> */}
+        <Carousel items={WorksItems} />
 
         <div className="grid lg:grid-cols-7 items-center justify-between pt-16">
           <hr className="border-white lg:col-span-5 lg:mt-0 mt-3 lg:order-first order-last w-full" />
@@ -36,12 +35,7 @@ const Works: React.FC = () => {
           dedication to staying up-to-date with the latest trends and tools in
           the industry.
         </p>
-        {/* <div className=" grid-row grid-col grid grid-cols-4">
-          <div className="bg-black h-72 w-72 rounded-xl"></div>
-          <div className="bg-black h-72 w-72 rounded-xl"></div>
-          <div className="bg-black h-72 w-72 rounded-xl"></div>
-          <div className="bg-black h-72 w-72 rounded-xl"></div>
-        </div> */}
+        <Carousel items={CertificationsItems} />
       </div>
     </>
   );
