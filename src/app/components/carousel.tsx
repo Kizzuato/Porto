@@ -123,7 +123,7 @@ const Carousel: React.FC<CarouselComponent> = ({ items }) => {
               </div>
             ))}
           </div>
-          {items.length > 3 || isMobile && (
+          {(items.length > 3 || isMobile ) && (
           <div>
             <button
               type="button"
