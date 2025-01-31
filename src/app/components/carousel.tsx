@@ -81,12 +81,12 @@ const Carousel: React.FC <CarouselComponent> = ({items}) => {
             {currentItems.map((item, index) => (
               <div
                 key={index}
-                className="h-[350px] bg-gray-800 rounded-lg overflow-hidden "
+                className="h-[300px] bg-gray-800 rounded-lg overflow-hidden "
               >
-                <div className="h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                  <a href="#AYONIMA">
-                    <Image className="rounded-t-lg" src={item.pict} alt=""/>
-                  </a>
+                <div className="h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div className="h-2/6">
+                    <Image className="rounded-t-lg h-full hover:object-contain object-cover" src={item.pict} width={500} alt="" placeholder="blur"/>
+                  </div>
                   <div className="p-5">
                     <a href="#AYONIMA">
                       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -157,7 +157,7 @@ const Carousel: React.FC <CarouselComponent> = ({items}) => {
             </span>
           </button>
         </div>
-        <div className="flex justify-center mt-2 space-x-2">
+        <div className="flex justify-center mt- space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
