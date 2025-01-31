@@ -22,14 +22,14 @@ const About: React.FC = () => {
         </div>
         <div className="bg-gray-900  lg:w-1 h-1 lg:h-full"></div>
         <div className=" lg:w-1/2 h-full lg:h-[348px]">
-          <h1 className="text-3xl font-bold text-gray-300 flex gap-2">
+          <h1 className="text-3xl font-bold  flex gap-2">
             ABOUT <p className="text-green-500">ME</p>
           </h1>
           <br />
           <h2 className="lg:text-xl pb-2 flex items-baseline gap-2">
             <p className="text-3xl">Hi</p>, my name is Dzakiyya Puteri Aulia
           </h2>
-          <h2 className="lg:text-xl text-justify pr-5 text-gray-300">
+          <h2 className="lg:text-xl text-justify pr-5 ">
             I am an Informatics student, passionate about building modern and
             efficient web applications. Currently, I am focused on mastering
             React, Next.js, and Tailwind CSS to create user-friendly web
