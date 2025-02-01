@@ -76,10 +76,12 @@ const Menues: React.FC = () => {
           <p className="text-3xl">Hi</p>, my name is Dzakiyya Puteri Aulia
         </h2> */}
         {selectedItem && selectedItem.icons ? (
-          <div className="text-2xl gap-3 flex-col flex">
+          <div className="gap-3 flex-col flex">
             {selectedItem.icons.map((icon, index) => (
               <div key={index} className="items-center w-full flex gap-2">
+                <p className="text-2xl">
                 {icon.ikon}
+                </p>
                 {icon.name}
               </div>
             ))}
