@@ -4,8 +4,8 @@ export const WorksItems = [
   {
     pict: me,
     link: "https://example1.com",
-    judul: "Website kelas rpl 1",
-    penjelasan: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    judul: "Classroom Website",
+    penjelasan: "",
   },
   {
     pict: me,
