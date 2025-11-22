@@ -1,9 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { ContactItem, contactItems } from "../data/contactItems";
-import Image from "next/image";
-import git from "../../../public/git.svg";
 
 const Contact: React.FC = () => {
   return (
@@ -22,7 +20,9 @@ const Contact: React.FC = () => {
             {contactItems.map((item: ContactItem) => (
               <a
                 key={item.name}
-                href={item.link} target="_blank"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="flex flex-row content-center items-center gap-5 border-green-500 rounded-lg p-2 relative font-medium group py-1.5 px-2.5">
                   <span className="absolute inset-0 w-full h-full transition duration-400 ease-out transform translate-x-1 translate-y-1 bg-green-500 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -53,18 +53,20 @@ const Contact: React.FC = () => {
                   <input
                     className="p-1 rounded-sm text-black mt-1"
                     type="text"
-                    id=""
-                    name="Name"
-                  ></input>
+                    id="firstName"
+                    name="firstName"
+                    required
+                  />
                 </label>
                 <label className="flex flex-col">
                   Last Name
                   <input
                     className="p-1 rounded-sm text-black mt-1"
                     type="text"
-                    id=""
-                    name="Name"
-                  ></input>
+                    id="lastName"
+                    name="lastName"
+                    required
+                  />
                 </label>
               </div>
               <label className="flex flex-col">
@@ -72,17 +74,20 @@ const Contact: React.FC = () => {
                 <input
                   className="p-1 rounded-sm text-black mt-1"
                   type="email"
-                  id=""
-                  name="Name"
-                ></input>
+                  id="email"
+                  name="email"
+                  required
+                />
               </label>
               <label className="flex flex-col">
                 Message
                 <textarea
                   className="p-1 rounded-sm text-black mt-1"
-                  id=""
-                  name="Name"
-                ></textarea>
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                />
               </label>
               <div className="grid grid-cols grid-cols-2 gap-16 mt-10">
                 <button

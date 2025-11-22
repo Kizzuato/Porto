@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import lineClamp from '@tailwindcss/line-clamp';
 
 const config: Config = {
   content: [
@@ -8,10 +7,6 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // colors: {
-    //   'main1': '#111827',
-    //   'second2': '#f3f4f6',
-    // },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -20,6 +15,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [lineClamp],
+  plugins: [],
 };
 export default config;

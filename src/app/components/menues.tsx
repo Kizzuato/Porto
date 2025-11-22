@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import {
   RiReactjsFill,
-  RiNodejsFill,
   RiTailwindCssFill,
   RiNextjsFill,
   RiMapPin2Fill,
@@ -23,7 +22,8 @@ interface MenuItem {
 }
 
 const Menues: React.FC = () => {
-  const menuItems: MenuItem[] = [
+  const menuItems: MenuItem[] = useMemo(
+    () => [
     {
       title: "Background",
       detail:
@@ -51,7 +51,9 @@ const Menues: React.FC = () => {
       detail:
         "My goal is to become a skilled and innovative Front-end Developer, collaborating on meaningful projects that solve real-world problems and improve user engagement. Outside of coding, I enjoy participating in technology events, creating visual artworks, and contributing to open-source projects. This well-rounded approach allows me to continuously learn and grow as a professional in the dynamic tech landscape.",
     },
-  ];
+  ],
+    []
+  );
 
   const [selectedItem, setSelectedItem] = useState<MenuItem>(menuItems[0]);
 
@@ -59,12 +61,12 @@ const Menues: React.FC = () => {
     <>
       <hr className="border-gray-600 border-2" />
       <div className="flex flex-wrap gap-3 h-10 overflow-scroll w-full">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <button
-            className={`hover:bg-gray-800 px-3 font-bold uppercase text-xl ${
+            className={`hover:bg-gray-800 px-3 font-bold uppercase text-xl transition-colors ${
               selectedItem?.title === item.title ? "bg-gray-800" : ""
             }`}
-            key={index}
+            key={item.title}
             onClick={() => setSelectedItem(item)}
           >
             {item.title}
@@ -72,16 +74,11 @@ const Menues: React.FC = () => {
         ))}
       </div>
       <div className="pt-3">
-        {/* <h2 className="lg:text-xl pb-2 flex items-baseline gap-2">
-          <p className="text-3xl">Hi</p>, my name is Dzakiyya Puteri Aulia
-        </h2> */}
-        {selectedItem && selectedItem.icons ? (
+        {selectedItem?.icons ? (
           <div className="gap-3 flex-col flex">
             {selectedItem.icons.map((icon, index) => (
-              <div key={index} className="items-center w-full flex gap-2">
-                <p className="text-2xl">
-                {icon.ikon}
-                </p>
+              <div key={icon.name || index} className="items-center w-full flex gap-2">
+                <p className="text-2xl">{icon.ikon}</p>
                 {icon.name}
               </div>
             ))}

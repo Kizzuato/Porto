@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Nav: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
   const bounceVariants = {
     open: {
       opacity: 1,
@@ -29,11 +30,14 @@ const Nav: React.FC = () => {
     },
   };
 
+  const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
   return (
     <>
-      <nav className=" bg-gray-800 z-10 h-16 sticky top-0">
-        <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8 xl:px-10 sticky top-0">
-          <div className="flex h-16 items-center justify-between sticky top-0 align-middle">
+      <nav className="bg-gray-800 z-10 h-16 sticky top-0">
+        <div className="mx-auto max-w-8xl px-2 sm:px-6 lg:px-8 xl:px-10">
+          <div className="flex h-16 items-center justify-between align-middle">
             <h1 className="text-white font-bold left-0 inset-y-0 flex gap-1">
               KIZZUATO <p className="text-green-500 font-bold">.</p>
             </h1>
@@ -59,7 +63,8 @@ const Nav: React.FC = () => {
             <div className="lg:hidden flex items-center">
               <button
                 className="text-green-500 focus:outline-none"
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                onClick={toggleSidebar}
+                aria-label="Toggle menu"
               >
                 {/* Icon burger */}
                 <svg
@@ -96,7 +101,12 @@ const Nav: React.FC = () => {
             {/* Sidebar items */}
             <div className="flex flex-col space-y-4 p-6">
               {navbarItems.map((item: NavbarItem) => (
-                <a key={item.title} href={item.href} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                <a
+                  key={item.title}
+                  href={item.href}
+                  onClick={closeSidebar}
+                  className="text-white hover:text-green-500 transition-colors"
+                >
                   {item.title}
                 </a>
               ))}

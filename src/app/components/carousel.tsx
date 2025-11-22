@@ -1,46 +1,48 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import Image, { StaticImageData } from "next/image";
-import me from "../../../public/placeholder.png";
 
-// pict
-// link
-// judul
-// penjelasan
 interface CarouselItems {
   pict: StaticImageData;
   link: string;
   judul: string;
   penjelasan: string;
 }
+
 interface CarouselComponent {
   items: CarouselItems[];
 }
 
 const Carousel: React.FC<CarouselComponent> = ({ items }) => {
-  // const items = [me, me, me, me, me]; // Ganti dengan data/gambar Anda
   const itemsPerSlideDesktop = 3;
   const itemsPerSlideMobile = 1;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Debounce function untuk optimize resize handler
   useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
+    let timeoutId: NodeJS.Timeout;
 
-      // Reset `currentSlide` jika mode berubah untuk mencegah slide yang tidak valid
-      setCurrentSlide((prevSlide) => {
-        const maxSlides = Math.ceil(
-          items.length / (mobile ? itemsPerSlideMobile : itemsPerSlideDesktop)
-        );
-        return Math.min(prevSlide, maxSlides - 1);
-      });
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const mobile = window.innerWidth < 768;
+        setIsMobile(mobile);
+
+        // Reset `currentSlide` jika mode berubah untuk mencegah slide yang tidak valid
+        setCurrentSlide((prevSlide) => {
+          const maxSlides = Math.ceil(
+            items.length / (mobile ? itemsPerSlideMobile : itemsPerSlideDesktop)
+          );
+          return Math.min(prevSlide, maxSlides - 1);
+        });
+      }, 150);
     };
 
     // Set ukuran layar awal
-    handleResize();
+    const initialMobile = window.innerWidth < 768;
+    setIsMobile(initialMobile);
 
     // Tambahkan listener untuk resize
     window.addEventListener("resize", handleResize);
@@ -48,82 +50,85 @@ const Carousel: React.FC<CarouselComponent> = ({ items }) => {
     // Hapus listener saat komponen dilepas
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
     };
-  }, []);
+  }, [items.length]);
 
-  // Hitung jumlah item per slide berdasarkan mode
-  const itemsPerSlide = isMobile ? itemsPerSlideMobile : itemsPerSlideDesktop;
+  // Memoize calculations untuk performance
+  const totalSlides = useMemo(
+    () =>
+      isMobile
+        ? items.length
+        : Math.ceil(items.length / itemsPerSlideDesktop),
+    [isMobile, items.length]
+  );
 
-  const currentItems = isMobile
-    ? [items[currentSlide]] // 1 item per slide di mode mobile
-    : items.slice(
-        currentSlide * itemsPerSlide,
-        (currentSlide + 1) * itemsPerSlide
-      );
+  const currentItems = useMemo(
+    () =>
+      isMobile
+        ? [items[currentSlide]]
+        : items.slice(
+            currentSlide * itemsPerSlideDesktop,
+            (currentSlide + 1) * itemsPerSlideDesktop
+          ),
+    [isMobile, items, currentSlide]
+  );
 
-  const totalSlides = isMobile
-    ? items.length // Total slide sama dengan jumlah item di mode mobile
-    : Math.ceil(items.length / itemsPerSlide);
-
-  const prevIndex = (currentSlide - 1 + items.length) % items.length;
-  const nextIndex = (currentSlide + 1) % items.length;
-
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
+  }, [totalSlides]);
 
   return (
-    <>
-      <div className="">
-        <div
-          id="default-carousel"
-          className="relative w-full h-full"
-          data-carousel="slide"
-        >
-          <div className="flex md:flex-rows-4 gap-4 px-10 justify-center">
-            {currentItems.map((item, index) => (
-              <div
-                key={index}
-                className="lg:h-[400px] h-[500px] bg-gray-800 rounded-lg overflow-hidden "
-              >
-                <div className="h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 grid grid-rows-5">
-                  <div className="row-span-2">
-                    <Image
-                      className="rounded-t-lg h-full hover:object-contain object-cover"
-                      src={item.pict}
-                      width={1000}
-                      alt=""
-                      placeholder="blur"
-                    />
-                  </div>
-                  <div className="p-5 h-full flex flex-col justify-between row-span-3 ">
-                    <h5 className=" relative h-1/6 flex flex-col justify-start end row-span-2 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
-                      {item.judul}
-                      <hr className="absolute bottom-3 lg:bottom-0 w-full border-t-2 self-end" />
-                    </h5>
-                    <p
-                      className="row-span-2 my-3 font-normal text-gray-700 dark:text-gray-400
-                    "
-                    >
-                      {item.penjelasan}
-                    </p>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      className="w-2/6 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                    >
-                      Details
-                    </a>
-                  </div>
+    <div>
+      <div
+        id="default-carousel"
+        className="relative w-full h-full"
+        data-carousel="slide"
+      >
+        <div className="flex md:flex-rows-4 gap-4 px-10 justify-center">
+          {currentItems.map((item, index) => (
+            <div
+              key={`${item.judul}-${index}`}
+              className="lg:h-[400px] h-[500px] bg-gray-800 rounded-lg overflow-hidden"
+            >
+              <div className="h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 grid grid-rows-5">
+                <div className="row-span-2">
+                  <Image
+                    className="rounded-t-lg h-full hover:object-contain object-cover"
+                    src={item.pict}
+                    width={1000}
+                    height={400}
+                    alt={item.judul}
+                    placeholder="blur"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-5 h-full flex flex-col justify-between row-span-3">
+                  <h5 className="relative h-1/6 flex flex-col justify-start end row-span-2 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+                    {item.judul}
+                    <hr className="absolute bottom-3 lg:bottom-0 w-full border-t-2 self-end" />
+                  </h5>
+                  <p className="row-span-2 my-3 font-normal text-gray-700 dark:text-gray-400">
+                    {item.penjelasan}
+                  </p>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-2/6 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                  >
+                    Details
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
-          {(items.length > 3 || isMobile ) && (
+            </div>
+          ))}
+        </div>
+        {(items.length > 3 || isMobile) && (
           <div>
             <button
               type="button"
@@ -187,10 +192,9 @@ const Carousel: React.FC<CarouselComponent> = ({ items }) => {
               ))}
             </div>
           </div>
-          )}
-        </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
